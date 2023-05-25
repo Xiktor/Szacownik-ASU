@@ -1,0 +1,24 @@
+﻿@page
+@model WebApplication1.Pages.SuccessPageModel
+@{
+    ViewData["Title"] = "Sukces";
+}
+
+<h2>Sukces</h2>
+<br />
+<br />
+
+@if (Model.Prediction != null)
+{
+    <h4>Szacowana wielkość sprzedaży soków pomaranczowych wynosi:</h4>
+    <br />
+    <h1>@Model.Prediction</h1>
+}
+else
+{
+    <p>Brak dostępnych wyników predykcji.</p>
+}
+
+<br />
+
+<a class="navbar-brand" asp-area="" asp-page="/Index"><button type="button" class="btn btn-primary">Jeszcze raz</button></a>

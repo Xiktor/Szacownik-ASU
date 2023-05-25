@@ -1,0 +1,135 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Wyślij dane do endpointa";
+}
+
+<h1>Wyślij dane do endpointa</h1>
+<br />
+
+<form method="post">
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                <div class="form-group">
+                    <label for="WeekStarting">WeekStarting:</label>
+                    <input type="text" class="form-control" id="WeekStarting" name="WeekStarting">
+                </div>
+                <div class="form-group">
+                    <label for="Store">Store:</label>
+                    <input type="text" class="form-control" id="Store" name="Store">
+                </div>
+                <div class="form-group">
+                    <label for="Brand">Brand:</label>
+                    <input type="text" class="form-control" id="Brand" name="Brand">
+                </div>
+                <div class="form-group">
+                    <label for="Advert">Advert:</label>
+                    <input type="number" class="form-control" id="Advert" name="Advert" onchange="validateNumber(this)">
+                </div>
+                <div class="form-group">
+                    <label for="Price">Price:</label>
+                    <input type="text" class="form-control" id="Price" name="Price" onchange="validateNumber(this)">
+                </div>
+                <div class="form-group">
+                    <label for="Age60">Age60:</label>
+                    <input type="text" class="form-control" id="Age60" name="Age60" onchange="validateNumber(this)">
+                </div>
+                <div class="form-group">
+                    <label for="COLLEGE">COLLEGE:</label>
+                    <input type="text" class="form-control" id="COLLEGE" name="COLLEGE" onchange="validateNumber(this)">
+                </div>
+                <div class="form-group">
+                    <label for="INCOME">INCOME:</label>
+                    <input type="text" class="form-control" id="INCOME" name="INCOME" onchange="validateNumber(this)">
+                </div>
+            </div>
+            <div class="col">
+                <div class="form-group">
+                    <label for="Hincome150">Hincome150:</label>
+                    <input type="text" class="form-control" id="Hincome150" name="Hincome150" onchange="validateNumber(this)">
+                </div>
+                <div class="form-group">
+                    <label for="LargeHH">Large HH:</label>
+                    <input type="text" class="form-control" id="LargeHH" name="LargeHH" onchange="validateNumber(this)">
+                </div>
+                <div class="form-group">
+                    <label for="Minorities">Minorities:</label>
+                    <input type="text" class="form-control" id="Minorities" name="Minorities" onchange="validateNumber(this)">
+                </div>
+                <div class="form-group">
+                    <label for="WorkingWoman">WorkingWoman:</label>
+                    <input type="text" class="form-control" id="WorkingWoman" name="WorkingWoman" onchange="validateNumber(this)">
+                </div>
+                <div class="form-group">
+                    <label for="SSTRDIST">SSTRDIST:</label>
+                    <input type="text" class="form-control" id="SSTRDIST" name="SSTRDIST" onchange="validateNumber(this)">
+                </div>
+                <div class="form-group">
+                    <label for="SSTRVOL">SSTRVOL:</label>
+                    <input type="text" class="form-control" id="SSTRVOL" name="SSTRVOL" onchange="validateNumber(this)">
+                </div>
+                <div class="form-group">
+                    <label for="CPDIST5">CPDIST5:</label>
+                    <input type="text" class="form-control" id="CPDIST5" name="CPDIST5" onchange="validateNumber(this)">
+                </div>
+                <div class="form-group">
+                    <label for="CPWVOL5">CPWVOL5:</label>
+                    <input type="text" class="form-control" id="CPWVOL5" name="CPWVOL5" onchange="validateNumber(this)">
+                </div>
+            </div>
+        </div>
+    </div>
+   
+    <br />
+    <br />
+
+    <button type="submit" class="btn btn-primary" style="margin-right: 15px;">Wyślij</button>
+    <button type="button" class="btn btn-secondary" onclick="fillFormWithExample()">Przykładowe dane</button>
+</form>
+
+<script>
+    function validateNumber(input) {
+        var value = input.value;
+        input.value = value.replace('.', ',');
+    }
+
+    function fillFormWithExample() {
+        var exampleData = {
+            "WeekStarting": "6/14/1990",
+            "Store": "2",
+            "Brand": "minute.maid",
+            "Advert": "0",
+            "Price": "3,17",
+            "Age60": "0,232864734",
+            "COLLEGE": "0,248934934",
+            "INCOME": "10,55320518",
+            "Hincome150": "0,463887065",
+            "LargeHH": "0,103953406",
+            "Minorities": "0,114279949",
+            "WorkingWoman": "0,303585347",
+            "SSTRDIST": "2,110122129",
+            "SSTRVOL": "1,142857143",
+            "CPDIST5": "1,927279669",
+            "CPWVOL5": "0,376926613"
+        };
+
+        document.getElementById("WeekStarting").value = exampleData.WeekStarting;
+        document.getElementById("Store").value = exampleData.Store;
+        document.getElementById("Brand").value = exampleData.Brand;
+        document.getElementById("Advert").value = exampleData.Advert;
+        document.getElementById("Price").value = exampleData.Price;
+        document.getElementById("Age60").value = exampleData.Age60;
+        document.getElementById("COLLEGE").value = exampleData.COLLEGE;
+        document.getElementById("INCOME").value = exampleData.INCOME;
+        document.getElementById("Hincome150").value = exampleData.Hincome150;
+        document.getElementById("LargeHH").value = exampleData.LargeHH
+        document.getElementById("Minorities").value = exampleData.Minorities;
+        document.getElementById("WorkingWoman").value = exampleData.WorkingWoman;
+        document.getElementById("SSTRDIST").value = exampleData.SSTRDIST;
+        document.getElementById("SSTRVOL").value = exampleData.SSTRVOL;
+        document.getElementById("CPDIST5").value = exampleData.CPDIST5;
+        document.getElementById("CPWVOL5").value = exampleData.CPWVOL5;
+    }
+
+</script>
